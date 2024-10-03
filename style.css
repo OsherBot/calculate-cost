@@ -1,21 +1,30 @@
 body {
-  font-family: arial;
+  font-family: Arial, sans-serif;
   background: conic-gradient(from -90deg at top left, black, white);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  width: 90vh;
-  height: 90vh;
-  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .input-container {
-  width: fit-content;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,9 +35,11 @@ body {
 .cost,
 .shared-cost {
   background: transparent;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  min-width: 100px;
 }
 
 .name::placeholder,
@@ -37,15 +48,14 @@ body {
   color: black;
 }
 
-
 .shared-cost {
-  width: 50ch;
   text-align: center;
 }
 
 .add-to-group {
   display: inline-block;
-  width: 15vh;
+  width: 100%;
+  max-width: 200px;
   padding: 10px;
   background: black;
   color: rgb(217, 217, 217);
@@ -57,4 +67,47 @@ body {
 
 .boy {
   font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .add-to-group {
+    width: 80%;
+  }
+
+  .name,
+  .cost,
+  .shared-cost {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .boy {
+    font-size: 1rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .name,
+  .cost,
+  .shared-cost {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .boy {
+    font-size: 0.9rem;
+  }
+
+  .add-to-group {
+    width: 90%;
+  }
 }
